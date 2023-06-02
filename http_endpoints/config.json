@@ -1,7 +1,7 @@
 [
     {
         "route": "/category",
-        "http_method": "POST",
+        "http_method": "GET",
         "function_name": "GetCollections",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
