@@ -7,8 +7,8 @@ exports = async function(arg){
   var serviceName = "mongodb-atlas";
 
   // Update these to reflect your db/collection
-  var dbName = "db_name";
-  var collName = "coll_name";
+  var dbName = "kistdb";
+  var collName = "products";
 
   // Get a collection from the context
   var collection = context.services.get(serviceName).db(dbName).collection(collName);
@@ -17,13 +17,10 @@ exports = async function(arg){
   try {
     // Get a value from the context (see "Values" tab)
     // Update this to reflect your value's name.
-    var valueName = "value_name";
-    var value = context.values.get(valueName);
+
 
     // Execute a FindOne in MongoDB 
-    findResult = await collection.findOne(
-      { owner_id: context.user.id, "fieldName": value, "argField": arg},
-    );
+    findResult = await collection.distinct('category', {});
 
   } catch(err) {
     console.log("Error occurred while executing findOne:", err.message);
