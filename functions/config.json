@@ -1,1 +1,6 @@
-[]
+[
+    {
+        "name": "GetCollections",
+        "private": false
+    }
+]
